@@ -7,136 +7,56 @@
     <link href="/css/global.css" rel="stylesheet" >
     <link href="/css/rentsale.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>ResourceX</title>
+    <title>For Sale - ResourceX</title>
   </head>
 
   <body>
     <%- include('partials/header.ejs') %>
 
-    <main id="rent">
-      <div class="search-container">
-        Search: <input class="search" type="text" name="state" min="1" max="31" step="1" placeholder="Enter State"/>
-        <input class="search" type="text" name="city" min="1" max="31" step="1" placeholder="Enter City"/>
-      </div>
-      
+    <main>
+      <form action="rent-search">
+        <div class="search-container">
+          Search: <input id="state" class="search" type="text" name="state" type="text"  placeholder="Enter State" autocomplete="off" required/>
+          <input id="city" class="search" name="city" type="text" placeholder="Enter City" autocomplete="off" required/>
+          <button id="filter-btn" class="filter-btn">
+              <i class="fa-solid fa-filter"></i>
+          </button>
+          <div id="filter-options" class="filter-options">
+            <label>
+              <input type="radio" name="sort-by" value="alphabetical" checked> Alphabetical Order
+            </label>
+            <label>
+              <input type="radio" name="sort-by" value="price"> Highest Price
+            </label>
+            <label>
+              <input type="radio" name="sort-by" value="location"> Nearest Location
+            </label>
+            <button id="apply-filter-btn">Apply</button>
+          </div>
+        </div>
+        <button class="search-btn" type="submit">SEARCH</button>
+      </form>
+
       <div class="card-container">
         <div class="card-content">
-        
-          <div class="card"> <!-- Card 1 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
+          <% for (let i = 0; i < for_sale_listings.length; i++) { %>
+            <div class="card"> 
+              <div class="card-img">
+                <img src="<%= for_sale_listings[i].photo %>">
+              </div>
+              <div class="card-info">
+                <p><%= for_sale_listings[i].price %></p>
+              </div>
             </div>
-            <div class="card-info">
-              <h3>Card 1</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-
-          <div class="card"> <!-- Card 2 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 2</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-
-          <div class="card"> <!-- Card 3 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 3</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-  
-          <div class="card"> <!-- Card 1 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 1</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-  
-          <div class="card"> <!-- Card 2 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 2</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-  
-          <div class="card"> <!-- Card 3 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 3</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-
-          <div class="card"> <!-- Card 1 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 1</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-  
-          <div class="card"> <!-- Card 2 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 2</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-  
-          <div class="card"> <!-- Card 3 -->
-            <div class="card-img">
-              <img src="img/house.jpg" alt="house">
-            </div>
-            <div class="card-info">
-              <h3>Card 3</h3>
-              <p>ergerrrrrrrrrrrrgwegwrthertherthe5thwerwrthgwerthertqaerhrtyjwyjwrtyhywsrthswryjwsrythswrthwsry</p>
-            </div>
-          </div>
-          
-        </div> <!-- End of 'card-content'-->
-
-        <div class="pagination">
-          <li class="page-item previous-page">
-            <a class="page-link" href="#">Prev</a>
-          </li>
-          <li class="page-item current-page">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item current-page">
-            <a class="page-link" href="#">2</a>
-          </li>
-          <li class="page-item current-page">
-            <a class="page-link" href="#">3</a>
-          </li>
-          <li class="page-item current-page">
-            <a class="page-link" href="#">4</a>
-          </li>
-          <li class="page-item next-page">
-            <a class="page-link" href="#">Next</a>
-          </li>
-        </div> <!-- End of 'pagination' -->
-        
-      </div> <!-- End of 'card-container' -->
+          <% } %>
+        </div>
+      </div>
     </main>
 
+    <footer>
+      
+    </footer>
+    <script src="js/filter.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

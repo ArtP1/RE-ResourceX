@@ -4,7 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link href="/css/global.css" rel="stylesheet" >
+    <link href="/css/global.css" rel="stylesheet">
+    <link href="/css/agents.css" rel="stylesheet">
+    <link href="/css/rentsale.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>ResourceX</title>
   </head>
@@ -12,5 +14,36 @@
   <body>
     <%- include('partials/header.ejs') %>
 
+    <main>
+      <form action="agents-search">
+        <div class="search-container">
+          Search: <input class="search" type="text" name="zipcode" type="number"  placeholder="Enter ZipCode" autocomplete="off" required/>
+          <button id="filter-btn" class="filter-btn">
+              <i class="fa-solid fa-filter"></i>
+          </button>
+          
+          <div id="filter-options" class="filter-options">
+            <label>
+              <input type="radio" name="sort-by" value="alphabetical" checked> Alphabetical Order
+            </label>
+            <label>
+              <input type="radio" name="sort-by" value="price"> Highest Price
+            </label>
+            <label>
+              <input type="radio" name="sort-by" value="location"> Nearest Location
+            </label>
+            <button id="apply-filter-btn">Apply</button>
+          </div>
+        </div>
+        <button class="search-btn" type="submit">SEARCH</button>
+      </form>
+
+
+            
+    </main>
+
+    <footer>
+      
+    </footer>
   </body>
 </html>

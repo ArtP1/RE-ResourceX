@@ -3,11 +3,30 @@
   padding: 0px;
   text-decoration: none !important;
 }
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(60,64,67); /* Set the color of the thumb */
+  border-radius: 10px;
+ }
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Set the color of the track */
+}
+
 .banner {
   display: flex;
   background-color: black;
   color: white;
-  padding: 7px 9.5%;
+  padding: 0px 9.5%;
+  height: 30px;
 }
 .fa-solid.fa-phone {
   font-size: 15px;
@@ -16,6 +35,8 @@
   font-size: 16px;
 } 
 .banner div {
+  position: relative;
+  top: 5px;
   margin-right: 25px;
   font-size: 17px;
 }
@@ -24,6 +45,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5px 9.5%;
+  height: 115px;
   box-shadow: 0px 3px 5px -2.5px #ccc;
 }
 header div {
@@ -33,6 +55,7 @@ header div {
 header div a {
   font-size: 25px;
   font-weight: bolder;
+  color: black;
 }
 .site-logo {
   height: 110px;
@@ -43,7 +66,6 @@ header .navbar ul{
 header .navbar ul li a {
   font-size: 20px;
   padding: 30px;
-  transition: 0.3s
   color: black;
 }
 .contact button {
@@ -58,4 +80,11 @@ header .navbar ul li a {
 }
 .contact button:hover {
   transform: scale(1.1);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  height: 40px;
 }

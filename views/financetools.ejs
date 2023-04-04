@@ -1,16 +1,170 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link href="/css/financetools.css" rel="stylesheet" >
     <link href="/css/global.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>ResourceX</title>
+    <title>Finance Tools - ResourceX</title>
   </head>
-
+  
   <body>
     <%- include('partials/header.ejs') %>
 
+
+      
+    <main>
+      <div class="table-of-contents">
+        <div class="table-content">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li><a href="#checking-rates">Checking Rates</a></li>
+            <li><a href="#calculate">Calculate Monthly Payments</a></li>
+            <li><a href="#calculate-affordability">Calculate Affordability</a></li>
+            <li><a href="#check-equity-rates">Check Equity Rates</a></li>
+            <li><a href="#rates">View Current Rates</a></li>
+          </ul>
+        </div>
+      </div>
+
+      
+      <div class="tools">
+        
+        <div class="heading-container">
+          <div class="heading-content">
+            <div>
+              <h1>Mortgage & Finance Tools</h1><br>
+              <p>Use these tools to help you make informed decisions about your home buying process.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="content_tools_container">
+          <div class="forms_content">
+            <div>
+              <h2 id="checking-rates">Checking Rates</h2>
+              <p>This tool allows the user to check the current interest rates for mortgages.</p>
+            </div>
+            <div class="forms">
+              <form class="all-forms">
+                <label for="loan-amount">Loan Amount:</label>
+                <input type="text" class="input_boxes" name="loan-amount"><br><br>
+                <label for="interest-rate">Interest Rate:</label>
+                <input type="text" class="input_boxes" name="interest-rate"><br><br>
+                <label for="term">Loan Term (in years):</label>
+                <input type="text" class="input_boxes" name="term"><br><br>
+                <button id="check_rate" type="submit">Check Rates</button>
+              </form>
+              <p>Results:</p>
+              <div class="results"></div>
+            </div>
+            
+            <br><br><br><br><br><br>
+            
+            <div>
+              <h2 id="calculate">Calculate Monthly Payments</h2>
+              <p>This tool helps the user to calculate the monthly payments that they would need to make for a mortgage. </p>
+            </div>
+            <div class="forms">
+              <form class="all-forms">
+                <label for="loan-amount">Loan Amount:</label>
+                <input type="text" class="input_boxes" name="loan-amount"><br><br>
+                <label for="interest-rate">Interest Rate:</label>
+                <input type="text" class="input_boxes" name="interest-rate"><br><br>
+                <label for="term">Loan Term (in years):</label>
+                <input type="text" class="input_boxes" name="term"><br><br>
+                <button id="calc_monthly_payments" type="submit">Calculate Monthly Payments</button>
+              </form>
+              <p>Results:</p>
+              <div class="results"></div>
+            </div>
+            
+            <br><br><br><br><br><br>
+
+            <div>
+              <h2 id="calculate-affordability">Calculate Affordability</h2>
+              <p>Use this tool to determine how much home you can afford based on your income, expenses, and debt-to-income ratio.</p>
+            </div>
+            <div class="forms">
+              <form class="all-forms">
+                <label for="income">Annual Income:</label>
+                <input type="text" class="input_boxes" name="income"><br><br>
+                <label for="expenses">Monthly Expenses:</label>
+                <input type="text" class="input_boxes" name="expenses"><br><br>
+                <label for="debt">Monthly Debt Payments:</label>
+                <input type="text" class="input_boxes" name="debt"><br><br>
+                <label for="debt-to-income">Desired Debt-to-Income Ratio:</label>
+                <input type="text" class="input_boxes" name="debt-to-income"><br><br>
+                <button id="calc_affordability" type="submit">Calculate Affordability</button>
+              </form>
+              <p>Results:</p>
+              <div class="results"></div>
+            </div>
+            
+            <br><br><br><br><br><br>
+            
+            <div>
+              <h2 id="check_equity_rates">Check Equity Rates</h2>
+              <p>This tool allows the user to check the current equity rates for their home.</p>
+            </div>
+            <div class="forms">
+              <form class="all-forms">
+                <label for="income">Annual Income:</label>
+                <input type="text" class="input_boxes" name="income"><br><br>
+                <label for="expenses">Monthly Expenses:</label>
+                <input type="text" class="input_boxes" name="expenses"><br><br>
+                <label for="debt">Monthly Debt Payments:</label>
+                <input type="text" class="input_boxes" name="debt"><br><br>
+                <label for="debt-to-income">Desired Debt-to-Income Ratio:</label>
+                <input type="text" class="input_boxes" name="debt-to-income"><br><br>
+                <button id="check_equ_rates" type="submit">Calculate Affordability</button>
+              </form>
+              <p>Results:</p>
+              <div class="results"></div>
+            </div>
+        
+
+          <br><br><br><br><br><br>
+            
+          <div>
+            <h2 id="view_curr_rates">View Current Rates</h2>
+            <p>This tool provides the user with a comprehensive view of the current mortgage rates in the market.</p>
+          </div>
+          <div class="forms">
+            <form class="all-forms">
+              <label for="income">Annual Income:</label>
+              <input type="text" class="input_boxes" name="income"><br><br>
+              <label for="expenses">Monthly Expenses:</label>
+              <input type="text" class="input_boxes" name="expenses"><br><br>
+              <label for="debt">Monthly Debt Payments:</label>
+              <input type="text" class="input_boxes" name="debt"><br><br>
+              <label for="debt-to-income">Desired Debt-to-Income Ratio:</label>
+              <input type="text" class="input_boxes" name="debt-to-income"><br><br>
+              <button id="check_current_rates" type="submit">View Rates</button>
+            </form>
+            <p>Results:</p>
+            <div class="results"></div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </main>
+
+  
+    
+     <!--   <h2 id="rates">View Current Rates</h2>
+    <p>Use this tool to view current mortgage rates from various lenders.</p>
+    <div id="rates-results"></div>
+    <p>Results:</p>
+    <div id="calculate-affordability-results"></div> -->
+    
+    
+
+  <footer>
+    
+  </footer>
+    
   </body>
 </html>

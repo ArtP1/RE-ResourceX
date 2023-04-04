@@ -1,0 +1,20 @@
+{
+  "files": {
+    "public/js/filter.js": [
+      {
+        "id": "2d46d1a2-3af5-4d31-b0c2-b3d0d0927d0a",
+        "line": 1,
+        "version": 15,
+        "index": 0
+      }
+    ],
+    "views/home.ejs": [
+      {
+        "id": "6b0f5903-0c89-401c-8365-bf920626bd44",
+        "line": 16,
+        "version": 2363,
+        "index": 586
+      }
+    ]
+  }
+}
