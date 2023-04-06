@@ -14,7 +14,7 @@
     <%- include('partials/header.ejs') %>
 
     <main>
-      <form action="rent-search">
+      <form action="forsale-search">
         <div class="search-container">
           Search: <input id="state" class="search" type="text" name="state" type="text"  placeholder="Enter State" autocomplete="off" required/>
           <input id="city" class="search" name="city" type="text" placeholder="Enter City" autocomplete="off" required/>
@@ -39,15 +39,50 @@
 
       <div class="card-container">
         <div class="card-content">
-          <% for (let i = 0; i < for_sale_listings.length; i++) { %>
-            <div class="card"> 
-              <div class="card-img">
-                <img src="<%= for_sale_listings[i].photo %>">
-              </div>
-              <div class="card-info">
-                <p><%= for_sale_listings[i].price %></p>
-              </div>
-            </div>
+          <% for (let i = 0; i < length; i++) { %>
+            <% if("rdc_web_url" in for_sale_listings[i] && "thumbnail" in for_sale_listings[i] && "prop_type" in for_sale_listings[i] && "address" in for_sale_listings[i] && "price" in for_sale_listings[i] && "beds" in for_sale_listings[i] && "baths" in for_sale_listings[i] && "building_size" in for_sale_listings[i]) { %>
+              <a href="<%= for_sale_listings[i].rdc_web_url %>" target=”_blank”>
+                <div class="card"> 
+                  <div class="card-img">
+                    <img src="<%= for_sale_listings[i].thumbnail %>">
+                  </div>
+                  <div class="card-info">
+                    <div>
+                        <p><%= for_sale_listings[i].prop_type %> in <%= for_sale_listings[i].address.city %></p>
+                    </div>
+    
+                    <div class="info">
+                      <div>
+                        <p>$<%= for_sale_listings[i].price %></p>
+                      </div>
+                      <div> 
+                        <% if(for_sale_listings[i].beds == "S") { %>
+                            <p>1 Bed |</p> 
+                        <% } else if(for_sale_listings[i].beds == 1) { %>
+                            <p>1 Bed |</p> 
+                        <% } else { %>
+                            <pr><%= for_sale_listings[i].beds %> Beds | </pr>
+                        <% } %>
+                          
+                        <% if(for_sale_listings[i].baths == "Call") { %>
+                            <p> Unknown # Baths |</p> 
+                        <% } else if(for_sale_listings[i].baths == 1) { %>
+                            <p> 1 Bath |</p>
+                        <% } else {%>
+                            <p> <%= for_sale_listings[i].baths %> Baths |</p> 
+                        <% } %> 
+                        
+                        <p><%= for_sale_listings[i].building_size.size %><%= for_sale_listings[i].building_size.units %></p>
+                      </div>
+                    </div>
+    
+                    <div>
+                      <p>Address: <%= for_sale_listings[i].address.line %></p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            <% } %>
           <% } %>
         </div>
       </div>

@@ -8,27 +8,33 @@
     <link href="/css/global.css" rel="stylesheet" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>ResourceX</title>
+
+    
   </head>
   
-  <body>
+  <body id="homebod">
     <%- include('partials/header.ejs') %>
 
     <main id="home">
       
-      <div> 
-        <div class="text-content">
-          <div>
-            <p>Homes in here</p>
+      <div id="first_half""> 
+        <form action="local-properties">
+          <div class="text-content">
+            <div>
+                <p>Homes in Monterey County</p><br><br><br>
+                <button type="submit">VIEW PROPERTIES</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <div>
-        <div class="img-content">
-          <img src="img/house.jpg" alt="house">
+        <div class="img_content"></div>
+        
+        <div id="overlay">
+          <img id="back_img" src="https://ap.rdcpix.com/c62c69437fdb3393cc52ce122b982e75l-m3615399421x.jpg" alt="house">   
         </div>
       </div>
-      
     </main>
 
       

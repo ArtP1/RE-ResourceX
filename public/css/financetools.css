@@ -7,7 +7,7 @@ main {
 .table-of-contents {
   padding: 80px 25px;
   border-right: 2px solid black;
-  height: 4700px;
+  height: auto;
   width: 275px;
 }
       .table-content h3 {
@@ -46,11 +46,12 @@ main {
   width: 100%;
 /*   background-color: grey; */
   align-items: center;
+  padding-bottom: 125px;
   justify-content: center;
 }
       .heading-container {
-        padding:90px;
         display: flex;
+        padding: 150px;
         height: fit-content;
       }
       .heading-content {
@@ -61,7 +62,7 @@ main {
         flex-direction: column;
       }
       .heading-content div {
-        margin: 85px;
+        margin: 100px;
       }
       .heading-content div h1{
         font-size: 45px;
@@ -79,29 +80,23 @@ main {
       .forms_content {
         display: flex;
         width: 750px;
-/*         background-color: blue;  */
-/*         align-items: center; 
-        text-align: center;
-        justify-content: center; */
         flex-direction: column;
       }
       .forms {
         margin: 15px;
       }
       /* Forms */
-      .all-forms {
+      .all_forms {
         display: flex;
         flex-wrap: wrap;
         margin: 32px 0;
         padding: 16px;
         box-shadow: 5px 5px 5px rgb(1 1 1 / 25%);
-/*         background-color: violet; */
         border: 1px solid #ccc;
         border-radius: 4px;
-/*         width: 50%; */
       }
       
-      .all-forms label {
+      .all_forms label {
         flex-basis: 100%;
         margin-bottom: 16px;
         font-size: 18px;
@@ -122,7 +117,7 @@ main {
         border-bottom: 2px solid #4CAF50;
       }
       
-      .all-forms button[type="submit"] {
+      .all_forms button[type="submit"] {
         background-color: #4CAF50;
         color: white;
         padding: 16px 24px;
@@ -134,7 +129,7 @@ main {
         transition: background-color 0.2s ease-in-out;
       }
       
-      .all-forms button[type="submit"]:hover {
+      .all_forms button[type="submit"]:hover {
         background-color: #3e8e41;
       }
       

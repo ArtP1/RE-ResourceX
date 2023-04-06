@@ -1,31 +1,72 @@
-body {
-  background-color: blue;
+#homebod {
+/*   background-color: blue; */
+    overflow: hidden;
+
 }
 #home {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: calc(100% - (30px + 115px + 40px));; /* calc(100% - (bannerHeight + headerHeight + footerHeight)) */
-  background-color: red;
+  width: 100%;
   
 }
+#first_half {
+  display: flex;
+  width: 100%;
+/*   background-color: red; */
+}
 #home div { /* This makes sure the fifty fifty portion functions correctly without having anything else affecting it */
-  width: 50%;
-  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - (30px + 120px + 40px));
+/*   background-color: blue; */
+/*   width: 100%; */
 
 }
 .text-content { /* Similar to a container */
   width: auto;
   display: flex;
-  background-color: red;
+  height: fit-content;
   justify-content: center;
+  align-items: center;
 }
 .text-content div {
+  display: flex;
+  flex-direction: column;
+/*   background-color: blue; */
   width: fit-content;
-  background-color: violet;
 }
 .text-content div p {
   font-size: 45px; 
   font-weight: bold;
+}
+.text-content div button {
+  cursor: pointer;
+  padding: 15px 25px;
+  border: none;
+  background: #BFAA8C;
+  border-radius: 3px;
+  transition: 0.75s;
+  color: white;
+  font-weight: bold;
+}
+ #back_img {
+  width: auto;
+  height: 350px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 45%);
+}
+#overlay {
+  position: absolute;
+  top: 250px; 
+  width: fit-content;
+  height: fit-content;
+  right: 485px; 
+}
+.img_content {
+  width: 100vh;
+  background-image: url("https://ap.rdcpix.com/c62c69437fdb3393cc52ce122b982e75l-m3615399421x.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(30%);
 }
