@@ -38,7 +38,44 @@
         <button class="search-btn" type="submit">SEARCH</button>
       </form>
 
-      
+      <div class="card-container">
+        <div class="card-content">
+          <% for (let a = 0; a < agentsList.length; a++) { %>
+            <% if("name" in agentsList[a] && "agent_rating" in agentsList[a] && "phones" in agentsList[a] && "photo" in agentsList[a] && "web_url" in agentsList[a] && ("specializations" in agentsList[a] && agentsList[a].specializations.length >= 1)) { %>
+              <a href="<%= agentsList[a].web_url %>" target=”_blank”>
+                <div class="card"> 
+                  <div class="card-img">
+                    <img src="<%= agentsList[a].photo.href %>">
+                  </div>
+                  <div class="card-info">
+                    <div>
+                        <p>Name: <%= agentsList[a].name %></p>
+                    </div>
+    
+                    <div class="agent_info">
+                      <p>Also Specializes in:</p>
+                      <div> 
+                        <ul id="specializations">
+                          <% for(let s = 0; s < agentsList[a].specializations.length; s++) { %>
+                            <li><%= agentsList[a].specializations[s].name %></li>
+                          <% } %>
+                        </ul>
+                      </div>
+                    </div>
+    
+                    <div>
+                      <p>Phone #: <%= agentsList[a].phones[0].number %></p>
+                    </div>
+                    <div>
+                      <p>Rating: <%= agentsList[a].agent_rating %></p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            <% } %>
+          <% } %>
+        </div>
+      </div>
             
     </main>
 

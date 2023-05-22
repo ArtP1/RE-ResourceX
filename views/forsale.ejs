@@ -39,12 +39,12 @@
 
       <div class="card-container">
         <div class="card-content">
-          <% for (let i = 0; i < length; i++) { %>
+          <% for (let i = 0; i < for_sale_listings.length; i++) { %>
             <% if("rdc_web_url" in for_sale_listings[i] && "thumbnail" in for_sale_listings[i] && "prop_type" in for_sale_listings[i] && "address" in for_sale_listings[i] && "price" in for_sale_listings[i] && "beds" in for_sale_listings[i] && "baths" in for_sale_listings[i] && "building_size" in for_sale_listings[i]) { %>
               <a href="<%= for_sale_listings[i].rdc_web_url %>" target=”_blank”>
                 <div class="card"> 
                   <div class="card-img">
-                    <img src="<%= for_sale_listings[i].thumbnail %>">
+                    <img class="card-img-full" src="<%= for_sale_listings[i].thumbnail %>">
                   </div>
                   <div class="card-info">
                     <div>

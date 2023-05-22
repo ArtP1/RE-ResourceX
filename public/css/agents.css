@@ -2,3 +2,64 @@
   margin: 60px;
   font-size: 
 }
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 2000px;
+/*   background-color: blue; */
+/*   margin: 75px; */
+}
+.card {
+  position: relative;
+  background: #fff;
+/*   max-width: 400px */
+  width: 400px;
+  height: auto;-
+  margin: 15px;
+  box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-img {
+  width: fill-box;
+  height: fill-box; 
+}
+.card-img img {
+  max-width: 750px;
+  height: 350px;
+}
+.card-info {
+/*   background-color: violet; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 20px;
+}
+.agent_info {
+/*   background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.agent_info div {
+/*   background-color: red; */
+  height: fit-content;
+  display: flex;
+}
+.card-info h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+#specializations {
+  padding-left: 75px;
+}
+.card-info p {
+  font-size: 1em;
+  margin-bottom: 5px;
+}

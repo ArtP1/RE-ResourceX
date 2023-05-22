@@ -13,8 +13,61 @@
   
   <body>
     <%- include('partials/header.ejs') %>
-
-   
+    
+    <main>
+      <div id="localHeader">
+        <p>Properties in Monterey</p>
+      </div>
+      <div class="card-container">
+        <div class="card-content">
+          <% for (let i = 0; i < local_properties.length; i++) { %>
+            <% if("rdc_web_url" in local_properties[i] && "thumbnail" in local_properties[i] && "prop_type" in local_properties[i] && "address" in local_properties[i] && "price" in local_properties[i] && "beds" in local_properties[i] && "baths" in local_properties[i] && "building_size" in local_properties[i]) { %>
+              <a href="<%= local_properties[i].rdc_web_url %>" target=”_blank”>
+                <div class="card"> 
+                  <div class="card-img">
+                    <img src="<%= local_properties[i].thumbnail %>">
+                  </div>
+                  <div class="card-info">
+                    <div>
+                        <p><%= local_properties[i].prop_type %> in <%= local_properties[i].address.city %></p>
+                    </div>
+    
+                    <div class="info">
+                      <div>
+                        <p>$<%= local_properties[i].price %></p>
+                      </div>
+                      <div> 
+                        <% if(local_properties[i].beds == "S") { %>
+                            <p>1 Bed |</p> 
+                        <% } else if(local_properties[i].beds == 1) { %>
+                            <p>1 Bed |</p> 
+                        <% } else { %>
+                            <pr><%= local_properties[i].beds %> Beds | </pr>
+                        <% } %>
+                          
+                        <% if(local_properties[i].baths == "Call") { %>
+                            <p> Unknown # Baths |</p> 
+                        <% } else if(local_properties[i].baths == 1) { %>
+                            <p> 1 Bath |</p>
+                        <% } else {%>
+                            <p> <%= local_properties[i].baths %> Baths |</p> 
+                        <% } %> 
+                        
+                        <p><%= local_properties[i].building_size.size %><%= local_properties[i].building_size.units %></p>
+                      </div>
+                    </div>
+    
+                    <div>
+                      <p>Address: <%= local_properties[i].address.line %></p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            <% } %>
+          <% } %>
+        </div>
+      </div>
+    </main>
 
       
     <footer>

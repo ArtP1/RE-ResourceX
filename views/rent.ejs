@@ -40,11 +40,11 @@
 
       <div class="card-container">
         <div class="card-content">
-          <% for (let i = 0; i < length; i++) { %>
+          <% for (let i = 0; i < rent_listings.length; i++) { %>
             <% if("photo" in rent_listings[i] && "prop_type" in rent_listings[i] && "address_new" in rent_listings[i] && "price" in rent_listings[i] && "beds" in rent_listings[i] && "baths" in rent_listings[i] && "sqft" in rent_listings[i]) {%>
               <div class="card"> 
                 <div class="card-img">
-                  <img src="<%= rent_listings[i].photo %>">
+                  <img class="card-img-full" src="<%= rent_listings[i].photo %>">
                 </div>
                 <div class="card-info">
                   <div>

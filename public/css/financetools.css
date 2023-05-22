@@ -102,7 +102,22 @@ main {
         font-size: 18px;
         font-weight: bold;
       }
-      
+      .dropdowns {
+        width: 100%;
+        height: 18px;
+        color: black;
+/*         padding: 20px; */
+        height: 50px;
+        cursor: pointer;
+        margin-bottom: 32px;
+      }
+      .dropdowns option: first-child {
+        text-align: center;
+      }
+      .dropdowns:focus {
+        outline: none;
+        border-bottom: 2px solid #4CAF50;
+      }
       .input_boxes {
         width: 100%;
         padding: 12px;
@@ -116,8 +131,7 @@ main {
         outline: none;
         border-bottom: 2px solid #4CAF50;
       }
-      
-      .all_forms button[type="submit"] {
+      .submit_btns {
         background-color: #4CAF50;
         color: white;
         padding: 16px 24px;
@@ -128,23 +142,24 @@ main {
         font-weight: bold;
         transition: background-color 0.2s ease-in-out;
       }
+-
       
-      .all_forms button[type="submit"]:hover {
+      .submit-btns : hover {
         background-color: #3e8e41;
       }
       
       /* Results */
       .results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
         margin: 32px 0;
         padding: 32px;
         border: 1px solid #ccc;
         border-radius: 4px;
       }
-      
-      .results p {
-        margin: 16px 0;
-        font-size: 18px;
-        line-height: 1.5;
+      .results div {  
+        margin: 10px;
       }
       
       /* Sections */
@@ -165,4 +180,5 @@ main {
         line-height: 1.5;
         text-align: center;
       }
+
       

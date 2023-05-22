@@ -49,13 +49,45 @@
             <div class="forms">
               <form class="all_forms">
                 <label>Credit Score:</label>
-                <input id="creditScoreCR" type="text" class="input_boxes" required><br><br>
+<!--                 <input id="creditScoreCR" type="text" class="input_boxes" required><br><br> -->
+                <select class="dropdowns" id="creditScoreCR">
+                  <option value="" disabled selected>- Select an Option -</option>
+                  <option value="excellent">Excellent (800 or more)</option>
+                  <option value="excellent">Good (669 - 799)</option>
+                  <option value="excellent">Fair (580 - 669)</option>
+                  <option value="excellent">Poor (300 - 579)</option>
+
+                </select>
                 <label>Points:</label>
-                <input id="pointsCR" type="text" class="input_boxes" required><br><br>
+                <select class="dropdowns" id="pointsCR">
+                  <option value="" disabled selected>- Select an Option -</option>
+                  <option value="all">All</option>
+                  <option value="zero">Zero/option>
+                  <option value="zero_to_one">0 - 1</option>
+                  <option value="one_to_two">1 - 2</option>
+                </select>
+<!--                 <input id="pointsCR" type="text" class="input_boxes" required><br><br> -->
                 <label>Loan Purpose:</label>
-                <input id="loanPurposeCR" type="text" class="input_boxes" required><br><br>          
+<!--                 <input id="loanPurposeCR" type="text" class="input_boxes" required><br><br>           -->
+                <select class="dropdowns" id="loanPurposeCR">
+                  <option value="" disabled selected>- Select an Option -</option>
+                  <option value="purchase">Purchase</option>
+                  <option value="refinance">Refinance</option>
+                </select>
                 <label>Loan Type:</label>
-                <input id="loanTypesCR" type="text" class="input_boxes" required><br><br>
+<!--                 <input id="loanTypesCR" type="text" class="input_boxes" required><br><br> -->
+                <select class="dropdowns" id="loanTypesCR">
+                  <option value="" disabled selected>- Select an Option -</option>
+                  <option value="all">All</option>
+                  <option value="30YrFixed">30 years</option>
+                  <option value="30YrFixed_FHA">30 year FHA (Fixed)</option>
+                  <option value="30YrFixed_VA">30 year VA (Fixed)</option>
+                  <option value="20YrFixed">20 years (Fixed)</option>
+                  <option value="15YrFixed">15 years (Fixed)</option>
+                  <option value="10YrFixed">10 years (Fixed)</option>
+                  <option value="5Arm">5/1 ARM</option>
+                  <option value="7Arm">7/1 ARM</option>
+                </select>
                 <label>Loan Percent:</label>
                 <input id="loanPercentCR" type="text" class="input_boxes" required><br><br>
                 <label>Property Price:</label>
@@ -63,10 +95,12 @@
                 <label>Zipcode:</label>
                 <input id="zipcodeCR" type="text" class="input_boxes" required><br><br>
                 
-                <button id="check_rate" type="submit">Check Rate</button>
+                <button class="submit_btns" id="check_rate" type="button">Check Rate</button>
               </form>
               <p>Results:</p>
-              <div id="check_rate_results" class="results"></div>
+              <div id="check_rate_results" class="results">
+                
+              </div>
             </div>
             
             <br><br><br><br><br><br>
@@ -99,7 +133,7 @@
                 <label>Served in the U.S. Military:</label>
                 <input id="isPmiInlcudedCA" type="text" class="input_boxes" required><br><br>
                 
-                <button id="calc_affordability" type="submit">Calculate Affordability</button>
+                <button class="submit_btns" id="calc_affordability" type="button">Calculate Affordability</button>
               </form>
               <p>Results:</p>
               <div id="calc_affordability_results" class="results"></div>
@@ -127,7 +161,7 @@
                 <label>Zipcode:</label>
                 <input id="zipcodeCER" type="text" class="input_boxes" required><br><br>
                 
-                <button id="check_equ_rates" type="submit">Check Equity Rate</button>
+                <button class="submit_btns" id="check_equ_rates" type="button">Check Equity Rate</button>
               </form>
               <p>Results:</p>
               <div id="check_equ_rates_results" class="results"></div>
@@ -157,7 +191,7 @@
                 <label>Zipcode:</label>
                 <input id="zipcodeFR" type="text" class="input_boxes" required><br><br>
               
-                <button id="finance_rates" type="button">View Rates</button>
+                <button class="submit_btns" id="finance_rates" type="button">View Rates</button>
             </form>
             <p>Results:</p>
             <div id="finance_rates_results" class="results">

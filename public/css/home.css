@@ -61,10 +61,11 @@
   top: 250px; 
   width: fit-content;
   height: fit-content;
-  right: 485px; 
+  right: 540px; 
 }
 .img_content {
   width: 100vh;
+  object-fit: cover;
   background-image: url("https://ap.rdcpix.com/c62c69437fdb3393cc52ce122b982e75l-m3615399421x.jpg");
   background-size: cover;
   background-repeat: no-repeat;
